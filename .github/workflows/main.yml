@@ -1,0 +1,16 @@
+name: Read Text File on Update
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "testcase.txt"
+jobs: 
+  read-file:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout code
+        uses: actions/checkout@v3
+      - name: read the text file
+        run: |
+          cat testcase.txt
